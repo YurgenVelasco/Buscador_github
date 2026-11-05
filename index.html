@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff6e9">
+  <meta name="description" content="GitFut Chibi Club: convierte cualquier perfil de GitHub en una carta de jugador chibi y descubre su rol en el campo del código.">
+  <title>GitFut · Chibi Club</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M14 26 9 8l17 9' fill='%23FFD6E2' stroke='%233A2E39' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M50 26 55 8 38 17' fill='%23FFD6E2' stroke='%233A2E39' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='36' r='20' fill='%23FFF3E2' stroke='%233A2E39' stroke-width='4'/%3E%3Ccircle cx='25' cy='35' r='3' fill='%233A2E39'/%3E%3Ccircle cx='39' cy='35' r='3' fill='%233A2E39'/%3E%3Cpath d='M28 43q4 4 8 0' fill='none' stroke='%233A2E39' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="bg-decor" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="GitFut Chibi Club, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <path d="M11 19 7 6l13 6" fill="#ffd6e2" stroke="#3a2e39" stroke-width="3" stroke-linejoin="round"></path>
+            <path d="M37 19 41 6l-13 6" fill="#ffd6e2" stroke="#3a2e39" stroke-width="3" stroke-linejoin="round"></path>
+            <circle cx="24" cy="28" r="16" fill="#fff3e2" stroke="#3a2e39" stroke-width="3"></circle>
+            <circle cx="18" cy="27" r="2.2" fill="#3a2e39"></circle>
+            <circle cx="30" cy="27" r="2.2" fill="#3a2e39"></circle>
+            <path d="M20 33q4 4 8 0" fill="none" stroke="#3a2e39" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <span class="brand-text">GIT<b>FUT</b></span>
+        <span class="brand-badge">chibi club</span>
+      </a>
+      <div class="topbar-meta">
+        <span class="live"><i></i>datos en vivo</span>
+        <span class="dot-sep" aria-hidden="true">✦</span>
+        <span>github × fútbol</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-tag">✦ scouting report</span> edición chibi</div>
+        <h1>Tu perfil entra<br>al <span class="highlight">campo.</span></h1>
+        <span class="doodle-note" aria-hidden="true">*modo chibi activado</span>
+        <p>Busca cualquier usuario de GitHub y descubre qué clase de jugador chibi sería su perfil de desarrollo.</p>
+
+        <form class="search" id="searchForm" autocomplete="off">
+          <span class="search-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          </span>
+          <input id="username" type="text" placeholder="Escribe un usuario, ej. octocat" autocomplete="off" spellcheck="false" aria-label="Usuario de GitHub">
+          <button id="searchButton" type="submit"><span class="btn-label">SCOUT</span><span class="btn-star" aria-hidden="true">✦</span></button>
+        </form>
+
+        <div class="suggestions">
+          <span>prueba con</span>
+          <button type="button" data-user="torvalds">torvalds</button>
+          <button type="button" data-user="sindresorhus">sindresorhus</button>
+          <button type="button" data-user="octocat">octocat</button>
+        </div>
+
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="speech">¡hola,<br>futuro crack!</div>
+        <svg class="mascot" viewBox="0 0 260 270" role="img" aria-label="Mascota chibi de GitFut">
+          <circle cx="132" cy="142" r="112" fill="#ffe27a" stroke="#3a2e39" stroke-width="6"></circle>
+          <circle cx="132" cy="142" r="100" fill="none" stroke="#fffdf7" stroke-width="3" stroke-dasharray="1 12" stroke-linecap="round"></circle>
+
+          <path d="M204 214c24-2 32 16 20 28-8 8-20 4-21-5" fill="none" stroke="#3a2e39" stroke-width="13" stroke-linecap="round"></path>
+          <path d="M204 214c24-2 32 16 20 28-8 8-20 4-21-5" fill="none" stroke="#fff3e2" stroke-width="6" stroke-linecap="round"></path>
+
+          <ellipse cx="106" cy="238" rx="20" ry="12" fill="#fff3e2" stroke="#3a2e39" stroke-width="6"></ellipse>
+          <ellipse cx="156" cy="238" rx="20" ry="12" fill="#fff3e2" stroke="#3a2e39" stroke-width="6"></ellipse>
+
+          <rect x="80" y="158" width="104" height="82" rx="40" fill="#ff8fb1" stroke="#3a2e39" stroke-width="6"></rect>
+
+          <path d="M86 182c-12 8-16 24-6 34" fill="none" stroke="#3a2e39" stroke-width="15" stroke-linecap="round"></path>
+          <path d="M86 182c-12 8-16 24-6 34" fill="none" stroke="#ff8fb1" stroke-width="8" stroke-linecap="round"></path>
+          <path d="M178 182c12 8 16 24 6 34" fill="none" stroke="#3a2e39" stroke-width="15" stroke-linecap="round"></path>
+          <path d="M178 182c12 8 16 24 6 34" fill="none" stroke="#ff8fb1" stroke-width="8" stroke-linecap="round"></path>
+
+          <path d="M130 178l6 12 13 2-9.5 9 2.3 13-11.8-6.2-11.8 6.2 2.3-13-9.5-9 13-2Z" fill="#ffe27a" stroke="#3a2e39" stroke-width="4.5" stroke-linejoin="round"></path>
+
+          <path d="M72 76 58 24l44 24" fill="#fff3e2" stroke="#3a2e39" stroke-width="7" stroke-linejoin="round"></path>
+          <path d="M74 62 66 38l22 13" fill="#ffd6e2"></path>
+          <path d="M188 76 202 24l-44 24" fill="#fff3e2" stroke="#3a2e39" stroke-width="7" stroke-linejoin="round"></path>
+          <path d="M186 62 194 38l-22 13" fill="#ffd6e2"></path>
+
+          <ellipse cx="130" cy="114" rx="74" ry="68" fill="#fff3e2" stroke="#3a2e39" stroke-width="7"></ellipse>
+          <path d="M122 48c4-12 18-16 26-7 5 6 4 12 1 16-8-9-18-10-27-9Z" fill="#3a2e39"></path>
+
+          <ellipse cx="101" cy="120" rx="10.5" ry="14" fill="#3a2e39"></ellipse>
+          <ellipse cx="159" cy="120" rx="10.5" ry="14" fill="#3a2e39"></ellipse>
+          <circle cx="104.5" cy="115" r="3.6" fill="#fff"></circle>
+          <circle cx="162.5" cy="115" r="3.6" fill="#fff"></circle>
+
+          <ellipse cx="82" cy="141" rx="12" ry="7" fill="#ffc2d3"></ellipse>
+          <ellipse cx="178" cy="141" rx="12" ry="7" fill="#ffc2d3"></ellipse>
+
+          <path d="M122 140q8 9 16 0" fill="none" stroke="#3a2e39" stroke-width="4.5" stroke-linecap="round"></path>
+          <path d="M64 124H48M66 138l-15 6" stroke="#3a2e39" stroke-width="4" stroke-linecap="round"></path>
+          <path d="M196 124h16M194 138l15 6" stroke="#3a2e39" stroke-width="4" stroke-linecap="round"></path>
+
+          <path d="M40 100l3.5 9 9 3.5-9 3.5-3.5 9-3.5-9-9-3.5 9-3.5Z" fill="#ff8fb1" stroke="#3a2e39" stroke-width="3.5" stroke-linejoin="round"></path>
+          <path d="M220 150l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5Z" fill="#a8ebcf" stroke="#3a2e39" stroke-width="3" stroke-linejoin="round"></path>
+          <path d="M206 70l2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="#cdbcff" stroke="#3a2e39" stroke-width="2.5" stroke-linejoin="round"></path>
+        </svg>
+        <span class="art-sticker">chibi mode</span>
+      </div>
+    </section>
+
+    <section class="skeleton" id="skeleton" aria-hidden="true" hidden>
+      <div class="sk sk-intro"></div>
+      <div class="skeleton-grid">
+        <div class="sk sk-card"></div>
+        <div class="sk sk-panel"></div>
+      </div>
+    </section>
+
+    <section class="layout" id="result" aria-label="Resultado del scouting">
+      <article class="panel introduction">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="intro-label"><span class="intro-dot" aria-hidden="true">✦</span>ficha del jugador</div>
+
+        <div class="intro-avatar-wrap">
+          <svg class="cat-ears" viewBox="0 0 120 42" aria-hidden="true">
+            <path d="M14 40 5 5l34 21" fill="#ffd6e2" stroke="#3a2e39" stroke-width="4" stroke-linejoin="round"></path>
+            <path d="M106 40l9-35-34 21" fill="#ffd6e2" stroke="#3a2e39" stroke-width="4" stroke-linejoin="round"></path>
+          </svg>
+          <img class="intro-avatar" id="introAvatar" alt="">
+        </div>
+
+        <div class="intro-copy">
+          <div class="intro-name" id="introName"></div>
+          <div class="intro-handle" id="introHandle"></div>
+          <p class="intro-bio" id="introBio"></p>
+          <div class="intro-meta" id="introMeta"></div>
+        </div>
+
+        <button class="analysis-button" id="analysisButton" type="button">
+          <span>Ver carta chibi</span>
+          <span aria-hidden="true">★</span>
+        </button>
+      </article>
+
+      <div class="analysis-content" id="analysisContent" hidden>
+        <article class="card player">
+          <div class="card-head"><span>GitHub · Chibi Card</span><span>Temporada 26</span></div>
+
+          <div class="player-top">
+            <div class="overall" id="overall">--<small>Rating</small></div>
+            <div class="role-badge">
+              <div class="role" id="role">--</div>
+              <span class="role-name" id="roleName">rol</span>
+            </div>
+          </div>
+
+          <div class="avatar-frame">
+            <svg class="cat-ears" viewBox="0 0 120 42" aria-hidden="true">
+              <path d="M14 40 5 5l34 21" fill="#ffd6e2" stroke="#3a2e39" stroke-width="4" stroke-linejoin="round"></path>
+              <path d="M106 40l9-35-34 21" fill="#ffd6e2" stroke="#3a2e39" stroke-width="4" stroke-linejoin="round"></path>
+            </svg>
+            <img class="avatar" id="avatar" alt="Avatar del usuario" src="">
+            <span class="heart-sticker" aria-hidden="true">♥</span>
+          </div>
+
+          <div class="player-name" id="playerName">Jugador</div>
+          <div class="player-handle" id="handle">@usuario</div>
+
+          <div class="stats" id="stats"></div>
+
+          <div class="card-foot">
+            <span>datos públicos de github</span>
+            <a id="cardLink" href="#" target="_blank" rel="noopener">ver perfil ↗</a>
+          </div>
+        </article>
+
+        <article class="panel details">
+          <div class="profile">
+            <span class="section-kicker">✦ perfil</span>
+            <h2 id="displayName">Perfil</h2>
+            <p class="bio" id="bio"></p>
+            <div class="meta" id="meta"></div>
+            <a class="profile-link" id="profileLink" href="#" target="_blank" rel="noopener">
+              <span>abrir perfil de github</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="section-title">
+            <h3>Repositorios recientes</h3>
+            <span id="repoCount"></span>
+          </div>
+          <div class="repos" id="repos"></div>
+        </article>
+      </div>
+    </section>
+
+    <p class="note">Las estadísticas son una interpretación lúdica de datos públicos. Inspirado en <a href="https://github.com/younesfdj/gitfut" target="_blank" rel="noopener noreferrer">GitFut y sus creadores ↗</a>. Hecho con ♥ y mucho café.</p>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
